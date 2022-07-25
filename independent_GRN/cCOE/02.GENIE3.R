@@ -10,7 +10,7 @@ data <- log2(data+1)
 
 # TFs
 TFs <- read.table('rice_planttfdb_overlap_iTAK.txt',header = F,stringsAsFactors = F)
-TFs <- TFs[which(TFs$V1%in%colnames(data)),1]
+TFs <- TFs[which(TFs$V1%in%rownames(data)),1]
 
 # run
 exprMatrix <- as.matrix(data)
